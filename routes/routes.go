@@ -8,7 +8,8 @@ import (
 )
 
 func HandleResquest() {
-	http.HandleFunc("/", controllers.Home)
-	http.HandleFunc("/api/personality", controllers.AllPersonalities)
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	r = mux.NewRouter()
+	r.HandleFunc("/", controllers.Home)
+	r.HandleFunc("/api/personality", controllers.AllPersonalities)
+	log.Fatal(http.ListenAndServe(":8000", r))
 }
