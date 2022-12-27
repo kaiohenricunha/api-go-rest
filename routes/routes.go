@@ -4,12 +4,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/kaiohenricunha/api-go-rest/controllers"
+	"github.com/kaiohenricunha/go-rest-api/controllers"
 )
 
 func HandleResquest() {
-	r = mux.NewRouter()
-	r.HandleFunc("/", controllers.Home)
-	r.HandleFunc("/api/personality", controllers.AllPersonalities)
-	log.Fatal(http.ListenAndServe(":8000", r))
+	http.HandleFunc("/", controllers.Home)
+	http.HandleFunc("/api/personalidades", controllers.TodasPersonalidades)
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }

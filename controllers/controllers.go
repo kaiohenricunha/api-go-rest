@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/kaiohenricunha/api-go-rest/models"
+	"github.com/kaiohenricunha/go-rest-api/models"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Home Page")
 }
 
-func AllPersonalities(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(models.Personalities)
+func TodasPersonalidades(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(models.Personalidades)
 }
