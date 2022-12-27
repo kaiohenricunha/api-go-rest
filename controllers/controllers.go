@@ -12,6 +12,6 @@ func Home(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Home Page")
 }
 
-func TodasPersonalidades(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode(models.Personalidades)
+func AllWikis(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode(models.Wikis)
 }
